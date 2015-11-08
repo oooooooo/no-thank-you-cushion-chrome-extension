@@ -4,6 +4,10 @@ Gunosy や NewsPicks などのクッションページをスキップして元�
 
 ## インストール
 
+Chrome の拡張機能でデベロッパーモードを ON にして、「パッケージ化されていない拡張機能を読み込む...」から dist/ を選択。
+
+## ビルド
+
 ```
 $ git clone https://github.com/oooooooo/no-thank-you-cushion-chrome-extension.git
 $ cd no-thank-you-cushion-chrome-extension
@@ -11,20 +15,16 @@ $ npm install
 $ grunt build
 ```
 
-Chrome の拡張機能でデベロッパーモードを ON にして、「パッケージ化されていない拡張機能を読み込む...」から dist/ を選択。
+恐らく grunt build に失敗すると思います。
 
-ただ、恐らく grunt build に失敗すると思います。下記「ビルドに失敗したら」をご参照ください。
-
-## ビルドに失敗したら
-
-grunt build に [yeoman/generator-chrome-extension](https://github.com/yeoman/generator-chrome-extension) 0.4.2 を使っているんだけど、
+[yeoman/generator-chrome-extension](https://github.com/yeoman/generator-chrome-extension) 0.4.2 を使っているんだけど、
 imagemin:dist で
 
 ```
 Fatal error: Cannot read property 'contents' of undefined
 ```
 
-が出る。
+が出るはず。
 
 原因は grunt-contrib-imagemin 0.9.4 が古い imagemin を使っているからなので、
 node_modules/grunt-contrib-imagemin/package.json の imagemin を最新版の 4.0.0 に書き換える。
@@ -39,7 +39,12 @@ node_modules/grunt-contrib-imagemin/package.json の imagemin を最新版の 4.
   },
 ```
 
-その後 npm install して grunt build でうまくいくはず。
+package.json を修正したら忘れずに npm install して grunt build でうまくいくはず。
+
+```
+$ npm install
+$ grunt build
+```
 
 ## 対応クッションページ
 
