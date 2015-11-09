@@ -6,11 +6,19 @@ Gunosy や NewsPicks などのクッションページをスキップして元�
 
 Chrome の拡張機能でデベロッパーモードを ON にして、「パッケージ化されていない拡張機能を読み込む...」から dist/ を選択。
 
-## ビルド
+## 開発
+
+開発は app/scripts.babel/ 以下を編集。
 
 ```
-$ git clone https://github.com/oooooooo/no-thank-you-cushion-chrome-extension.git
-$ cd no-thank-you-cushion-chrome-extension
+$ grunt debug
+```
+
+## ビルド
+
+自前で dist/ を作る方法。
+
+```
 $ npm install
 $ grunt build
 ```
