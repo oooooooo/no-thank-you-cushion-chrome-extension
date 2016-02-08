@@ -3,7 +3,8 @@
 var rules = {
   '^https?:\/\/gunosy\.com\/': [
     '<p><a href="(.+?)">元記事を読む</a>',
-    '<a class="btn" target="_blank" href="(.+?)">続きを読む</a>'
+    '<a class="btn" target="_blank" href="(.+?)">続きを読む</a>',
+    '宜しければ下記リンクを押してください<br><a href="(.+?)">'
   ],
   '^https?:\/\/newspicks\.com\/': [
     '<a class="read-more center" href="(.+?)" target="_blank">続きを読む</a>'
